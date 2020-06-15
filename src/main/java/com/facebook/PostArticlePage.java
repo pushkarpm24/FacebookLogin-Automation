@@ -6,12 +6,15 @@ import org.openqa.selenium.WebDriver;
     public class PostArticlePage {
 
         WebDriver driver;
+
+        //using by class
         By postSection = By.xpath("/html/body");
         By postArticle = By.xpath("/html/body");
         By privacy = By.xpath("//div[@id='u_4b_a']");
         By postButton = By.xpath("//span[contains(text(),'Post')]");
 
 
+        //constructor
        public PostArticlePage(WebDriver driver)
        {
            this.driver = driver;

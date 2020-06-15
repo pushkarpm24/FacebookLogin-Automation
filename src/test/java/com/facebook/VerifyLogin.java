@@ -9,19 +9,30 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class VerifyAutomationScript {
+public class VerifyLogin {
 
    @Test
-   public void verifyValidLogin() throws InterruptedException {
+   public void LoginTest() throws InterruptedException {
+
+      //setting the path of chrome driver executable
 
       System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
+
+      //using chrome options to disable unwanted notifications
       ChromeOptions opt = new ChromeOptions();
       opt.addArguments("--disable-notifications");
+
+      //Launch the chrome browser
       WebDriver driver = new ChromeDriver(opt);
+
+      //Maximizing the window
       driver.manage().window().maximize();
-      //driver.manage().deleteAllCookies();
+
+
       driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
       driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+
+      //Enter the url
       driver.get("http://www.facebook.com");
 
 
@@ -33,6 +44,8 @@ public class VerifyAutomationScript {
       Thread.sleep(1000);
       login.clickOnLoginButton();
       Thread.sleep(5000);
+
+//      WORKING ON ASSERTION
 
 //      String expectedPageTitle = "Facebook";
 //      String actualPageTitle = driver.getTitle().toString();
@@ -53,7 +66,8 @@ public class VerifyAutomationScript {
 //      Thread.sleep(5000);
 
 
-      //driver.quit();
+      //close the browser
+      driver.close();
 
    }
 

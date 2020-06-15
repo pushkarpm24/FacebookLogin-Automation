@@ -7,10 +7,12 @@ public class LoginPage {
 
     WebDriver driver;
 
+    //using by class
     By username = By.xpath("//*[@id='email']");
     By password = By.xpath("//*[@id='pass']");
     By loginButton = By.xpath("//*[@id='u_0_b']");
 
+    //constructor
     public LoginPage(WebDriver driver)
     {
         this.driver = driver;
